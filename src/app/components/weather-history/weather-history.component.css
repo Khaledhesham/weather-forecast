@@ -1,0 +1,24 @@
+.weather-history {
+  height: 100%;
+}
+.data-buttons {
+  padding: 10px 0px 0px;
+  margin-bottom: 0px;
+}
+.data-buttons li {
+  display: inline-block;
+}
+.data-buttons li  a {
+  border-radius: 50%;
+  margin: 10px;
+  border: 2px solid white;
+  color: white;
+  /* background:rgba(0,255,255,0.4); */
+}
+#chart {
+  height: calc(100% - 48px);
+}
+.chart-title {
+  margin-bottom: 0px;
+  color:white;
+}

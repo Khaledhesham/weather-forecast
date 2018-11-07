@@ -1,0 +1,14 @@
+<div class="row page-sep" #container (window:resize)="onResize($event)">
+    <div class="col-lg-6" id="summary" *ngIf="!toggle || view == 'summary'">
+      <weather-summary [query]="summary_query" [query_type]="summary_query_type" (currentWeather)='setCurrentWeather($event)' *ngIf="summary_query"></weather-summary>
+    </div>
+    <div class="col-lg-6" *ngIf="!toggle || view == 'chart'">
+      <weather-history [current_weather]="current_weather" *ngIf="current_weather"></weather-history>
+    </div>
+</div>
+<a class="btn-floating btn-sm my-0 blue-gradient waves-effect waves-light toggle" (click)="setView('chart')" *ngIf="view=='summary'">
+  <i class="fa fa-bar-chart"></i>
+</a>
+<a class="btn-floating btn-sm my-0 blue-gradient waves-effect waves-light toggle" (click)="setView('summary')" *ngIf="view=='chart'">
+  <i class="wi wi-day-cloudy"></i>
+</a>

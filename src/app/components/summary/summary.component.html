@@ -1,0 +1,37 @@
+<div class="container-fluid current-weather" *ngIf="weather.icon">
+<div class="row">
+  <div class="col-7">
+    <h2 class="font-weight-bold">{{weather?.city}}, {{weather?.country}}</h2>
+  </div>
+  <div class="col-5 max-min font-weight-normal no-gutter">
+    <h3 class="text-center">
+      <i class="wi wi-direction-down align-middle"></i>
+      <span class="align-middle min">{{weather?.min_temperature}}°</span>
+      <i class="wi wi-direction-up align-middle"></i>
+      <span class="align-middle max">{{weather?.max_temperature}}°</span>
+    </h3>
+  </div>
+  <div class="col-4">
+    <h4 id="day">{{weather?.localtime | amParse:'YYYY-MM-DD' | amDateFormat:'dddd'}}</h4>
+    <h5 id="date">{{weather?.localtime | amParse:'YYYY-MM-DD' | amDateFormat:'DD/MM/YYYY'}}</h5>
+    <h5 id="wind">Wind {{weather?.wind_speed}}km/h <i class="wi wi-wind from-{{weather?.wind_direction}}-deg"></i></h5>
+    <h5 id="humidity"><i class="wi wi-humidity"></i> {{weather?.humidity}}%</h5>
+  </div>
+  <div class="col-4 text-center">
+    <i class="current-weather-icon wi {{weather.icon}}"></i>
+    <h4 id="description">{{weather?.description}}</h4>
+  </div>
+  <div class="col-4 text-center temperature-container">
+    <h1 class="font-weight-bold current-temperature">{{weather?.temperature}}°</h1>
+  </div>
+</div>
+</div>
+<div class="container-fluid week-weather text-center">
+  <div class="row">
+    <div class="col-2 week-day" *ngFor="let day of weather.week;let i = index">
+        <h4>{{day.localtime | amParse:'YYYY-MM-DD' | amDateFormat:'ddd'}}</h4>
+        <i class="wi {{day.icon}} fa-3x"></i>
+        <h4>{{day.temperature}}°</h4>
+    </div>
+  </div>
+</div>

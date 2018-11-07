@@ -1,0 +1,104 @@
+.current-weather {
+  background: rgba(0,255,255,0.2);
+  border-radius: 20px;
+  padding: 20px;
+  color:white;
+}
+.current-weather-icon
+{
+  font-size: 13vw;
+}
+.current-weather h2 {
+  font-size: 2.3vw;
+}
+.current-temperature{
+  font-size:7vw;
+}
+.max-min h3 {
+  font-size: 2vw;
+}
+.max-min i {
+  font-size: 1.5em;
+}
+.min {
+  margin-right: 15px;
+}
+.temperature-container {
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}
+.week-weather {
+  margin-top: 15px;
+  background: rgba(0,255,255,0.2);
+  border-radius: 20px;
+  padding: 20px;
+  color:white;
+}
+.week-day i{
+  margin: 10px 0px;
+}
+.week-day  {
+  font-size:1.2vw;
+}
+.week-day h4 {
+  font-size:1.7vw;
+}
+#day {
+  font-size: 2vw;
+}
+#date {
+  font-size: 2vw;
+}
+#wind {
+  font-size: 1.5vw;
+}
+#humidity {
+  font-size: 2vw;
+}
+#description {
+  margin-top:30px;
+  margin-bottom: 0px;
+  font-size: 1.5vw;
+}
+@media (max-width: 992px)
+{
+  .week-weather {
+    margin-top: 7px;
+    padding: 10px !important;
+  }
+  .week-day  {
+    font-size: 1.5vw;
+  }
+  .week-day h4 {
+    font-size: 3vw;
+  }
+  #day {
+    font-size: 4vw;
+  }
+  #date {
+    font-size: 4vw;
+  }
+  #wind {
+    font-size: 3vw;
+  }
+  #humidity {
+    font-size: 4vw;
+  }
+  #description {
+    font-size: 3vw;
+  }
+  .current-weather-icon
+  {
+    font-size: 19vw;
+  }
+  .current-weather h2 {
+    font-size: 4.6vw;
+  }
+  .current-temperature{
+    font-size: 14vw;
+  }
+  .max-min h3 {
+    font-size: 4vw;
+  }
+}

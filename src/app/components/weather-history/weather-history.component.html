@@ -1,0 +1,21 @@
+<div class="weather-history">
+  <!-- <ul class="data-buttons text-center">
+    <li>
+      <a class="btn-floating btn-sm my-0 waves-effect waves-light">
+          <i class="fa fa-star"></i>
+      </a>
+    </li>
+    <li>
+      <a class="btn-floating btn-sm my-0 waves-effect waves-light">
+          <i class="fa fa-star"></i>
+      </a>
+    </li>
+    <li>
+      <a class="btn-floating btn-sm my-0 waves-effect waves-light">
+          <i class="fa fa-star"></i>
+      </a>
+    </li>
+  </ul> -->
+  <h2 class="chart-title text-center">{{chart_title}}</h2>
+  <div id="chart" #chart (window:resize)="onResize($event)"></div>
+</div>

@@ -1,3 +1,14 @@
-<p>
-  landing works!
-</p>
+<div class="row page-sep" #container (window:resize)="onResize($event)">
+  <div class="col-lg-6" id="summary" *ngIf="!toggle || view == 'summary'">
+    <weather-summary [query]="summary_query" [query_type]="summary_query_type" *ngIf="summary_query"></weather-summary>
+  </div>
+  <div class="col-lg-6" *ngIf="!toggle || view == 'map'">
+    <map [country]="country" *ngIf="country"></map>
+  </div>
+</div>
+<a class="btn-floating btn-sm my-0 blue-gradient waves-effect waves-light toggle" (click)="setView('map')" *ngIf="view=='summary'">
+  <i class="fa fa-map-marker"></i>
+</a>
+<a class="btn-floating btn-sm my-0 blue-gradient waves-effect waves-light toggle" (click)="setView('summary')" *ngIf="view=='map'">
+  <i class="wi wi-cloudy"></i>
+</a>

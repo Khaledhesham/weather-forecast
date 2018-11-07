@@ -1,20 +1,20 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ApiService } from '../../services/api.service';
-import { COUNTRIES } from "../../shared/countries";
 import { ActivatedRoute } from '@angular/router';
 declare var window: any;
 
 @Component({
-  selector: 'landing',
-  templateUrl: './landing.component.html',
-  styleUrls: ['./landing.component.css']
-}) 
-
-export class LandingComponent implements OnInit {
+  selector: 'app-dashboard',
+  templateUrl: './dashboard.component.html',
+  styleUrls: ['./dashboard.component.css']
+})
+export class DashboardComponent implements OnInit {
   position:any;
   country:any;
+  city:any;
   summary_query:any;
   summary_query_type:any;
+  current_weather:any;
   toggle: boolean;
   view: string;
   @ViewChild('container') container; 
@@ -46,8 +46,9 @@ export class LandingComponent implements OnInit {
       else 
       {
         this.country = params['country'];
-        this.summary_query = COUNTRIES[params['country']].name;
-        this.summary_query_type = "country";
+        this.summary_query = params['city'];
+        this.summary_query_type = "city";
+        this.city = params['city'];
       }
     });
     if (this.container.nativeElement.clientWidth <= 991)
@@ -69,8 +70,8 @@ export class LandingComponent implements OnInit {
       this.summary_query_type = "latLng";
       this.country = data.country_code;
     },err=>{
-      this.summary_query_type = "country";
       this.summary_query = 'egypt';
+      this.summary_query_type = "country";
       this.country = 'eg';
     });
   }
@@ -85,6 +86,11 @@ export class LandingComponent implements OnInit {
     },err=>{
       this.country = 'eg';
     });
+  }
+
+  setCurrentWeather(weather)
+  {
+    this.current_weather = weather;
   }
 
   onResize (event)

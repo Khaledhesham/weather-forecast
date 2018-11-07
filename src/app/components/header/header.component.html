@@ -1,0 +1,28 @@
+<header>
+  <nav class="mb-4 navbar fixed-top navbar-expand-lg navbar-dark font-weight-bold">
+    <!-- <img src="/assets/weather-icon.png"> -->
+    <a class="navbar-brand font-bold" href="#">Weather Forecast</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse text-right" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto mt-lg-0">
+          <li class="nav-item" [attr.id]="router.url=='/'? 'active':''">
+            <a class="nav-link" href="">Home</a>
+          </li>
+          <li class="nav-item" [attr.id]="router.url.startsWith('/dashboard')? 'active':''">
+            <a class="nav-link" href="/dashboard">Dashboard</a>
+          </li>
+          <li class="nav-item dropdown" [attr.id]="router.url.startsWith('/country')? 'active':''">
+              <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">Change Country</a>
+              <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item text-center" href="/country/{{key}}" *ngFor="let key of countries_keys">
+                  <img src="https://www.countryflags.io/{{key}}/flat/32.png"> {{countries[key].shortcode}}
+                </a>
+              </div>
+            </li>
+        </ul>
+      </div>
+  </nav>
+</header>
