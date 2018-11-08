@@ -13,7 +13,7 @@ export class HeaderComponent implements OnInit {
   countries_keys:any;
 
   constructor(
-    private router: Router
+    public router: Router
   ) {
   }
 

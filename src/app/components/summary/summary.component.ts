@@ -23,14 +23,11 @@ export class SummaryComponent implements OnInit {
   ngOnInit() {
     this.api.getWeather(this.query).subscribe(result => {
       this.currentWeather.emit(result);
-      console.log(result);
       this.weather.week = new Array();
       result.data.weather.slice(1).forEach(day => {
         var weather = new Weather();
         weather.temperature = day.hourly[0].tempC;
         weather.localtime = day.date;
-        // console.log(day.hourly[0].weatherCode);
-        // console.log(day.hourly[0].weatherDesc[0].value);
         weather.icon = ICONS[day.hourly[0].weatherCode].day;
         this.weather.week.push(weather);
       });
@@ -62,7 +59,6 @@ export class SummaryComponent implements OnInit {
       }
       else
       {
-        console.log(result.data.current_condition[0].weatherCode);
         this.weather.icon = ICONS[result.data.current_condition[0].weatherCode].day;
       }
     }, err => {

@@ -96,7 +96,7 @@ export class WeatherHistoryComponent implements OnInit {
         });
   }
 
-  onResize() {
+  onResize(event) {
     this.createBarChart();
   }
 }

@@ -7,7 +7,9 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "preinstall": "npm install -g @angular/cli @angular/compiler-cli typescript",
+    "postinstall": "ng build --prod"
   },
   "private": true,
   "dependencies": {
@@ -29,9 +31,11 @@
     "d3": "^5.7.0",
     "d3-geo": "^1.11.1",
     "datamaps": "^0.5.9",
+    "express": "^4.16.4",
     "font-awesome": "^4.7.0",
     "jquery": "^3.3.1",
     "mdbootstrap": "^4.5.13",
+    "path": "^0.12.7",
     "rxjs": "^6.0.0",
     "topojson": "^3.0.2",
     "weather-icons-npm": "^10.0.0",
@@ -58,5 +62,9 @@
     "ts-node": "~5.0.1",
     "tslint": "~5.9.1",
     "typescript": "~2.7.2"
+  },
+  "engines": {
+    "node": "11.0.0",
+    "npm": "6.4.1"
   }
 }
