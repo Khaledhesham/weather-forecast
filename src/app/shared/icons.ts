@@ -95,6 +95,10 @@ export const ICONS = {
     "day" : "wi-day-rain-mix",
     "night" : "wi-night-alt-rain-mix"
   },
+  317 : {
+    "day" : "wi-day-sleet",
+    "night" : "wi-night-alt-sleet"
+  },
   329 : {
     "day" : "wi-day-snow",
     "night" : "wi-night-alt-snow"

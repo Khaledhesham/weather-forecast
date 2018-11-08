@@ -28,7 +28,14 @@ export class SummaryComponent implements OnInit {
         var weather = new Weather();
         weather.temperature = day.hourly[0].tempC;
         weather.localtime = day.date;
-        weather.icon = ICONS[day.hourly[0].weatherCode].day;
+        if (ICONS[day.hourly[0].weatherCode] === undefined)
+        {
+          weather.icon = "wi-na";
+        }
+        else 
+        {
+          weather.icon = ICONS[day.hourly[0].weatherCode].day;
+        }
         this.weather.week.push(weather);
       });
       this.weather.localtime = result.data.time_zone[0].localtime;
@@ -53,7 +60,11 @@ export class SummaryComponent implements OnInit {
       this.weather.humidity = result.data.current_condition[0].humidity;
       this.weather.wind_speed = result.data.current_condition[0].windspeedKmph;
       this.weather.wind_direction = result.data.current_condition[0].winddirDegree;
-      if (result.data.current_condition[0].isdaytime === "no")
+      if (ICONS[result.data.current_condition[0].weatherCode] === undefined)
+      {
+        this.weather.icon = "wi-na";
+      }
+      else if (result.data.current_condition[0].isdaytime === "no")
       {
         this.weather.icon = ICONS[result.data.current_condition[0].weatherCode].night;
       }
